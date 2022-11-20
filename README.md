@@ -7,16 +7,11 @@
 |Next.js|-|
 |Docker|-|
 |StoryBook|UIコンポーネントのテストや管理|
-|Tailwind CSS|CSSフレームワーク|
 |jest|テストツール|
 |prettier|コード整形|
 |ESLint|静的解析|
-|Husky|GitHooksが簡単になる|
-|lint-staged|commitする時にlintできる|
 |Axios|api|
-|aspida|apiの型定義とかが楽になる|
 |hygen|Componentの自動作成|
-|recoil|状態管理ライブラリ|
 
 ## npm scripts
 |alias|実行内容|command|
@@ -29,8 +24,7 @@
 |build-sb|StoryBookをビルド|`build-storybook`|
 |test|テストする|`jest --watch`|
 |format|prettierでコードを整形|`prettier --write \"./**/**/*.{ts,tsx}\"`|
-|fix|ESLintでコードを修正|`eslint --fix 'pages/**/*.{js,jsx,ts,tsx}' && eslint --fix 'components/**/*.{js,jsx,ts,tsx}'`|
-|api-build|aspidaを使って型定義ファイルをビルド|`aspida`|
+|fix|ESLintでコードを修正|`eslint --fix 'src/**/*.{js,jsx,ts,tsx}'`|
 |mc|コンポーネントを作る<br>make component|`hygen components add`|
 
 ## Commit Message Rule
@@ -61,11 +55,11 @@ feat: ログイン機能を作成した (#21)
 ## Branch Rule
 下記のルールに従ってブランチを作成してください
 
-`{prefix}/{name}/{issue_number}`
+`{prefix}/{name}/{issue_number}-{issue_content}`
 
 ```
-feat/imai/15
-fix/foo/34
+feat/imai/15-add-more-skills
+fix/foo/34-add-memo
 ```
 
 |prefix|内容|
@@ -81,34 +75,30 @@ fix/foo/34
 `[{prefix}]{content}`
 
 ```
-[front]CSS Moduleの導入
-[Back]DBテーブル設計
+[feat]CSS Moduleの導入
+[feat]DBテーブル設計
 ```
 
 |prefix|内容|
 |:-:|-|
-|env|全体的な環境構築|
-|front|フロントエンド面でのissue|
-|back|バックエンド面|
-|infra|インフラ面|
+|feat|新機能の追加|
+|fix|修正|
+|style|コードスタイルやフォーマット|
+|test|テスト|
+|del|削除|
 
 ## ディレクトリ説明
 ### view/
 フロントエンド開発用ディレクトリ<br>
 いずれバックエンドのコンテナを作ることを前提として作成
 
-### pages/
-ページコンポーネントを配置
+### src/
+ソースコード全般
 
-### components/
+### src/pages/
+各ページを配置
+
+### src/components/
 各コンポーネントを配置
 - common - 汎用的なボタンやセレクトボックスなど
-- iconn - アイコン
 - layout - ヘッダーなどの大きな要素
-- store - 状態管理
-
-### apis/
-aspida で使用する型情報を配置
-
-### types/
-汎用的な型定義ファイルを配置
