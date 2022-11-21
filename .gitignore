@@ -5,6 +5,7 @@
 /admin_api/tmp
 .DS_Store
 .env
+storybook-static
 
 # Log files
 /view/npm-debug.log*

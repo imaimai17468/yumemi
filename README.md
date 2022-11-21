@@ -6,12 +6,15 @@
 |TypeScript|-|
 |Next.js|-|
 |Docker|-|
+|sass|-|
 |StoryBook|UIコンポーネントのテストや管理|
 |jest|テストツール|
 |prettier|コード整形|
 |ESLint|静的解析|
 |Axios|api|
 |hygen|Componentの自動作成|
+|CSS Modlues|各ComponentのStyle設定|
+|clsx|styleを場合によって変えれるようにする|
 
 ## npm scripts
 |alias|実行内容|command|
@@ -24,8 +27,7 @@
 |build-sb|StoryBookをビルド|`build-storybook`|
 |test|テストする|`jest --watch`|
 |format|prettierでコードを整形|`prettier --write \"./**/**/*.{ts,tsx}\"`|
-|fix|ESLintでコードを修正|`eslint --fix 'src/**/*.{js,jsx,ts,tsx}'`|
-|mc|コンポーネントを作る<br>make component|`hygen components add`|
+|hygen:add|コンポーネントを作る<br>make component|`hygen components add`|
 
 ## Commit Message Rule
 [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) の規則に沿って commit message を記述してください。
