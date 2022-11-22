@@ -18,4 +18,3 @@ Default.args = {
   purpose: 'primary',
   size: 'middle',
 }
-
