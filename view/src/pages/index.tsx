@@ -1,10 +1,10 @@
 import { Button } from '@components/common'
+import { Header } from '@components/layout'
 
 export default function Home() {
   return (
     <div>
-      <div>hello world</div>
-      <Button>test</Button>
+      <Header />
     </div>
   )
 }
