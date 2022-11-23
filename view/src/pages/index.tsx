@@ -1,10 +1,9 @@
-import { Button } from '@components/common'
-import { Header } from '@components/layout'
+import { Button, Card } from '@components/common'
 
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Card>test</Card>
     </div>
   )
 }
