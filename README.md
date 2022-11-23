@@ -32,11 +32,11 @@
 ## Commit Message Rule
 [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) の規則に沿って commit message を記述してください。
 
-`{prefix}: {message} (#{issue_number})`
+`[{prefix}] {message} (#{issue_number})`
 
 ```
-chore: commit-lintを導入した (#15)
-feat: ログイン機能を作成した (#21)
+[chore] README.md を修正 (#15)
+[feat] ログイン機能を作成した (#21)
 ```
 
 |prefix|内容|
@@ -57,11 +57,11 @@ feat: ログイン機能を作成した (#21)
 ## Branch Rule
 下記のルールに従ってブランチを作成してください
 
-`{prefix}/{name}/{issue_number}-{issue_content}`
+`{prefix}/{name}/issue{issue_number}`
 
 ```
-feat/imai/15-add-more-skills
-fix/foo/34-add-memo
+feat/imai/issue15
+fix/foo/issue34
 ```
 
 |prefix|内容|
