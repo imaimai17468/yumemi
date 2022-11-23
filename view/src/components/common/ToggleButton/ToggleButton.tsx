@@ -10,7 +10,7 @@ interface Props {
 
 export default function ToggleButton(props: Props): JSX.Element {
   const [active, setActive] = React.useState(false)
-  const className = clsx(style.button, style[props.size ?? 'medium'], {
+  const className = clsx(style.button, style[props.size ?? 'default'], {
     [style.active]: active,
     [style.not_active]: !active,
   })

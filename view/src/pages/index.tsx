@@ -31,7 +31,6 @@ export default function Home() {
 
   const prefectureButtons = prefectures.map((prefecture: PrefectureProps) => (
     <ToggleButton
-      key={prefecture.prefCode}
       onClick={() => handleSelectPrefecture(prefecture)}
     >
       {prefecture.prefName}

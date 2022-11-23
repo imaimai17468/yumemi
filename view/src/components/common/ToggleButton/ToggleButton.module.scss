@@ -1,9 +1,7 @@
 .button {
-    width: 100px;
     padding: 4px 8px;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
     transition: 0.2s;
 
     &:hover {
@@ -36,7 +34,7 @@
     font-size: 12px;
 }
 
-.medium {
+.default {
     width: 120px;
     font-size: 18px;
 }
@@ -44,4 +42,11 @@
 .large {
     width: 160px;
     font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .default {
+        width: 80px;
+        font-size: 12px;
+    }
 }
