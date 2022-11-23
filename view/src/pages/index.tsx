@@ -30,9 +30,7 @@ export default function Home() {
   }
 
   const prefectureButtons = prefectures.map((prefecture: PrefectureProps) => (
-    <ToggleButton
-      onClick={() => handleSelectPrefecture(prefecture)}
-    >
+    <ToggleButton onClick={() => handleSelectPrefecture(prefecture)}>
       {prefecture.prefName}
     </ToggleButton>
   ))
