@@ -11,7 +11,7 @@ module.exports = {
           type: "select",
           name: "level",
           message: "Which Component category?",
-          choices: ["common", "icons", "layout"],
+          choices: ["common", "layout"],
         },
         {
           type: "input",
