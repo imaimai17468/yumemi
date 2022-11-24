@@ -1,4 +1,4 @@
-import { getPrefectures } from '../api/getPrefectures'
+import { getPrefectures } from '@api/getPrefectures'
 import { useState, useEffect } from 'react'
 
 export const usePrefectures = () => {
