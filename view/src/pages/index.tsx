@@ -1,21 +1,40 @@
 import { ToggleButton, Card } from '@components/common'
 import { usePrefectures } from '@hooks/usePrefectures'
+import { usePopulation } from '@hooks/usePopulation'
 import style from '@styles/index.module.scss'
 import { useState, useEffect } from 'react'
+import { Line } from 'react-chartjs-2'
 
-interface PrefectureProps {
+interface Prefecture {
   prefCode: number
   prefName: string
 }
 
+interface Population {
+  year: number
+  value: number
+}
+
+interface PrefecturePopulation {
+  prefCode: number
+  prefName: string
+  population: Population[]
+}
+
 export default function Home() {
   const prefectures = usePrefectures()
-  const [selectedPrefectures, setSelectedPrefectures] =
-    useState<PrefectureProps[]>()
+  const [selectedPrefectures, setSelectedPrefectures] = useState<Prefecture[]>(
+    []
+  )
+  const [population, setPopulation] = useState<PrefecturePopulation[]>()
 
-  useEffect(() => {}, [selectedPrefectures])
+  const prefecturePopulation = usePopulation(selectedPrefectures)
 
-  const handleSelectPrefecture = (prefecture: PrefectureProps) => {
+  useEffect(() => {
+    setPopulation(prefecturePopulation.population)
+  }, [prefecturePopulation])
+
+  const handleSelectPrefecture = (prefecture: Prefecture) => {
     if (
       selectedPrefectures?.find((pref) => pref.prefCode === prefecture.prefCode)
     ) {
@@ -29,8 +48,11 @@ export default function Home() {
     }
   }
 
-  const prefectureButtons = prefectures.map((prefecture: PrefectureProps) => (
-    <ToggleButton key={prefecture.prefCode} onClick={() => handleSelectPrefecture(prefecture)}>
+  const prefectureButtons = prefectures.map((prefecture: Prefecture) => (
+    <ToggleButton
+      key={prefecture.prefCode}
+      onClick={() => handleSelectPrefecture(prefecture)}
+    >
       {prefecture.prefName}
     </ToggleButton>
   ))
@@ -41,6 +63,12 @@ export default function Home() {
         <div>
           <h2 className={style.title}>Prefectures</h2>
           <div className={style.prefecture_container}>{prefectureButtons}</div>
+        </div>
+      </Card>
+      <Card>
+        <div>
+          <h2 className={style.title}>Graph</h2>
+          <div className={style.graph_container}></div>
         </div>
       </Card>
     </div>
