@@ -1,5 +1,5 @@
 import { getPopulation } from '@api/getPopulation'
-import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 interface Prefecture {
   prefCode: number
