@@ -14,6 +14,18 @@
     justify-items: center;
 }
 
+.graph_container {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not_selected {
+    color: #333;
+    font-size: 1.5rem;
+}
+
 @media screen and (max-width: 768px) {
     .prefecture_container {
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
