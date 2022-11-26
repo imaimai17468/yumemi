@@ -6,14 +6,6 @@
     margin-bottom: 2.5rem;
 }
 
-.prefecture_container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    grid-gap: 1rem;
-    margin-bottom: 2.5rem;
-    justify-items: center;
-}
-
 .graph_container {
     height: 30vh;
     display: flex;
@@ -24,10 +16,4 @@
 .not_selected {
     color: #333;
     font-size: 1.5rem;
-}
-
-@media screen and (max-width: 768px) {
-    .prefecture_container {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    }
 }
