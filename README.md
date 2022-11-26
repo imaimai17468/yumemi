@@ -71,7 +71,7 @@ fix/foo/issue34
 |review|レビュー|
 
 ## Issue Rule
-下記のルールに従ってブランチを作成してください<br>
+下記のルールに従ってissueを作成してください<br>
 また、内容に従って適宜Tag及びAsigneesをつけてください<br>
 
 `[{prefix}]{content}`
@@ -96,6 +96,12 @@ fix/foo/issue34
 
 ### src/
 ソースコード全般
+
+### src/api/
+APIを叩くための関数を格納するディレクトリ
+
+### src/hooks/
+カスタムフックを格納するディレクトリ
 
 ### src/pages/
 各ページを配置
