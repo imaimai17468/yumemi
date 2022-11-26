@@ -1,9 +1,21 @@
+.main_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin: 2.5rem 0;
+}
+
 .title {
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
     margin: 0;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.prefecture_card{
+    position: relative;
+    min-height: 30vh;
 }
 
 .graph_container {
@@ -11,6 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .not_selected {

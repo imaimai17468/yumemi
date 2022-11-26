@@ -19,6 +19,7 @@ interface PrefecturePopulation {
 
 export const usePopulation = (prefectures: Prefecture[]) => {
   const [population, setPopulation] = useState<PrefecturePopulation[]>([])
+  const [loading, setLoading] = useState(true)
 
   const cache = useRef(new Map())
 
@@ -33,6 +34,7 @@ export const usePopulation = (prefectures: Prefecture[]) => {
   }, [])
 
   useEffect(() => {
+    setLoading(true)
     const fetchAllPopulation = async () => {
       const allPopulation = await Promise.all(
         prefectures.map(async (prefecture) => {
@@ -44,10 +46,11 @@ export const usePopulation = (prefectures: Prefecture[]) => {
           }
         })
       )
+      setLoading(false)
       setPopulation(allPopulation)
     }
     fetchAllPopulation()
   }, [prefectures, fetchPopulation])
 
-  return { population }
+  return { population, loading }
 }
