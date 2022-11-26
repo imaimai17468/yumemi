@@ -1,4 +1,4 @@
-import axios from 'axios'
+import { prefecturesAPI } from './axiosAPIs'
 
 interface Prefecture {
   prefCode: number
@@ -6,11 +6,7 @@ interface Prefecture {
 }
 
 export const getPrefectures = async () => {
-  const url = 'https://opendata.resas-portal.go.jp/api/v1/prefectures'
-  const headers = {
-    'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY,
-  }
-  const res = await axios.get(url, { headers })
+  const res = await prefecturesAPI.get('')
   const prefectures = res.data.result.map((prefecture: Prefecture) => ({
     prefCode: prefecture.prefCode,
     prefName: prefecture.prefName,
