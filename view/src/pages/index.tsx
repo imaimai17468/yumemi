@@ -42,7 +42,6 @@ export default function Home() {
   Chart.register(...registerables)
 
   useEffect(() => {
-    console.log(prefecturePopulation)
     setPopulation(prefecturePopulation.population)
   }, [prefecturePopulation])
 
