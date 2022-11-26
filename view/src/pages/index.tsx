@@ -32,7 +32,6 @@ export default function Home() {
   const prefecturePopulation = usePopulation(selectedPrefectures)
 
   useEffect(() => {
-    console.log(prefecturePopulation.loading)
     setPopulation(prefecturePopulation.population)
   }, [prefecturePopulation])
 
