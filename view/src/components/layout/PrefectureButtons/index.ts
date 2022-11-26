@@ -1,1 +1,1 @@
-export { default } from './PrefectureButtons';
+export { default } from './PrefectureButtons'

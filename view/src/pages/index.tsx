@@ -56,16 +56,15 @@ export default function Home() {
       return p.year.toString()
     })
     setLabels(labels)
-    
+
     const datasets = population.map((p) => {
       return {
         label: p.prefName,
         data: p.population.map((pop) => pop.value),
         borderColor: `hsl(${p.prefCode * 15}, 100%, 50%)`,
-        
       }
     })
-    
+
     setDatasets(datasets)
   }, [population])
 

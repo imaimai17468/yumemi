@@ -34,19 +34,17 @@ export const usePopulation = (prefectures: Prefecture[]) => {
 
   useEffect(() => {
     const fetchAllPopulation = async () => {
-    
-        const allPopulation = await Promise.all(
-          prefectures.map(async (prefecture) => {
-            const population = await fetchPopulation(prefecture.prefCode)
-            return {
-                prefCode: prefecture.prefCode,
-                prefName: prefecture.prefName,
-                population,
-            }
-            })
-        )
-        setPopulation(allPopulation)
-
+      const allPopulation = await Promise.all(
+        prefectures.map(async (prefecture) => {
+          const population = await fetchPopulation(prefecture.prefCode)
+          return {
+            prefCode: prefecture.prefCode,
+            prefName: prefecture.prefName,
+            population,
+          }
+        })
+      )
+      setPopulation(allPopulation)
     }
     fetchAllPopulation()
   }, [prefectures, fetchPopulation])

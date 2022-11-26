@@ -38,8 +38,5 @@ export default function PrefectureButtons(props: Props): JSX.Element {
     </ToggleButton>
   ))
 
-  return(
-    <div className={style.prefecture_container}>{prefectureButtons}</div>
-  )
-
-};
+  return <div className={style.prefecture_container}>{prefectureButtons}</div>
+}
