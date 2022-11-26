@@ -7,6 +7,4 @@ const { Default } = composeStories(stories)
 
 test('render PrefectureButtons with default args', () => {
   render(<Default />)
-  const PrefectureButtonsElement = screen.getByText(/PrefectureButtons/i)
-  expect(PrefectureButtonsElement).not.toBeNull()
 })
