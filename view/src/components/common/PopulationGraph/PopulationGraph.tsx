@@ -58,6 +58,20 @@ export default function PopulationGraph(props: Props): JSX.Element {
       options={{
         responsive: true,
         maintainAspectRatio: false,
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Year',
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Population',
+            },
+          },
+        },
       }}
     />
   )
