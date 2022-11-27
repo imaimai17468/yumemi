@@ -1,4 +1,4 @@
-import { ToggleButton } from '../../common'
+import { ToggleButton, LoadingCard } from '../../common'
 import style from './PrefectureButtons.module.scss'
 
 interface Prefecture {
@@ -10,10 +10,11 @@ interface Props {
   prefectures: Prefecture[]
   selectedPrefectures: Prefecture[]
   setSelectedPrefectures: React.Dispatch<React.SetStateAction<Prefecture[]>>
+  isLoading: boolean
 }
 
 export default function PrefectureButtons(props: Props): JSX.Element {
-  const { prefectures, selectedPrefectures, setSelectedPrefectures } = props
+  const { prefectures, selectedPrefectures, setSelectedPrefectures, isLoading } = props
 
   const handleSelectPrefecture = (prefecture: Prefecture) => {
     if (
@@ -38,5 +39,10 @@ export default function PrefectureButtons(props: Props): JSX.Element {
     </ToggleButton>
   ))
 
-  return <div className={style.prefecture_container}>{prefectureButtons}</div>
+  return (
+    <div className={style.prefecture_container}>
+      {isLoading && <LoadingCard />}
+      {prefectureButtons}
+    </div>
+  )
 }
