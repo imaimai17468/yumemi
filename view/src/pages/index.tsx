@@ -55,12 +55,12 @@ export default function Home() {
     <div className={style.main_container}>
       <Card>
         <div className={style.prefecture_card}>
-          {isPrefectureLoading && <LoadingCard />}
           <h2 className={style.title}>Prefectures</h2>
           <PrefectureButtons
             prefectures={prefectures}
             selectedPrefectures={selectedPrefectures}
             setSelectedPrefectures={setSelectedPrefectures}
+            isLoading={isPrefectureLoading}
           />
         </div>
       </Card>
